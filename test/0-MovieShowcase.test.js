@@ -28,25 +28,25 @@ describe('<MovieShowcase />', () => {
   it('passes all 4 props to every component', () => {
     expect(cards.exists()).to.equal(true)
     cards.forEach(card => {
-      expect(card.props().title).to.exist
-      expect(card.props().IMDBRating).to.exist
-      expect(card.props().genres).to.exist
-      expect(card.props().poster).to.exist
+      expect(card.props().movie.title).to.exist
+      expect(card.props().movie.IMDBRating).to.exist
+      expect(card.props().movie.genres).to.exist
+      expect(card.props().movie.poster).to.exist
     })
   })
   
   it('has generated the correct prop values for the first movie', () => {
-    expect(cards.at(0).props().title).to.equal('Choux and Maru go to Istanbul')
-    expect(cards.at(0).props().IMDBRating).to.equal(3)
-    expect(JSON.stringify(cards.at(0).props().genres)).to.equal(JSON.stringify(['cats', 'adventure', 'romance']))
-    expect(cards.at(0).props().poster).to.equal('choux-maru-istanbul')
+    expect(cards.at(0).props().movie.title).to.equal('Choux and Maru go to Istanbul')
+    expect(cards.at(0).props().movie.IMDBRating).to.equal(3)
+    expect(JSON.stringify(cards.at(0).props().movie.genres)).to.equal(JSON.stringify(['cats', 'adventure', 'romance']))
+    expect(cards.at(0).props().movie.poster).to.equal('choux-maru-istanbul')
   })  
   
   it('has generated the correct prop values for the last movie', () => {
-    expect(cards.last().props().title).to.equal('The Trash Man')
-    expect(cards.last().props().IMDBRating).to.equal(5)
-    expect(JSON.stringify(cards.last().props().genres)).to.equal(JSON.stringify(['crime', 'period piece']))
-    expect(cards.last().props().poster).to.equal('the-trash-man')
+    expect(cards.last().props().movie.title).to.equal('The Trash Man')
+    expect(cards.last().props().movie.IMDBRating).to.equal(5)
+    expect(JSON.stringify(cards.last().props().movie.genres)).to.equal(JSON.stringify(['crime', 'period piece']))
+    expect(cards.last().props().movie.poster).to.equal('the-trash-man')
   })  
   
 })
